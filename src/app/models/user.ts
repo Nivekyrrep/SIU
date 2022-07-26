@@ -1,5 +1,5 @@
 export class User {
-    USERNAME!: number;
+    USERNAME!: string;
     firstName!: string;
     lastName!: string;
     email!: string;
@@ -8,4 +8,5 @@ export class User {
     userModified!: number;
     userStatus!: number;
     password!: string;
+    first_Name!: string;
 }
