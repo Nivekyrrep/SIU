@@ -1,10 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { AuthenticationService } from './login/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'wrpadmin';
+export class AppComponent implements DoCheck {
+
+  loginSuccess = false;
+  canIBeLoggedIn: false | undefined;
+  isLoggedIn = false;
+  isUserLoggedIn: boolean | undefined;
+
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthenticationService) { }
+
+  ngOnInit() {
+    this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+    console.log('menu ->' + this.isLoggedIn);
+
+  }
+
+  ngDoCheck() {
+    this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+    console.log('menu ->' + this.isLoggedIn);
+  }
+
+  // onclick(isLoggedIn: any) return: any;
+
+
+  handleLogout() {
+    this.authenticationService.logout();
+  }
+
+  title = 'Web Report Portal Admin';
 }
