@@ -7,10 +7,11 @@ import { ReportListComponent } from './report-list/report-list.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  
   {path: 'report-list', component: ReportListComponent},
   {path: 'addReport', component: CreateReportComponent},
   {path: 'logo', component: LogoComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   // {path: 'employees', redirectTo: 'employees', pathMatch: 'full'},
   // {path: 'create-employee', component: CreateEmployeeComponent},
