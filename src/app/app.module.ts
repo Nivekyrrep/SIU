@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { AliasComponent } from './alias/alias.component';
 import { ConfigComponent } from './config/config.component';
 import { CreateReportComponent } from './create-report/create-report.component';
-import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpInterceptorService } from './services/http-interceptor.service';
+// import { LiveReportComponent } from './live-report/live-report.component';
 import { LoginComponent } from './login/login.component';
 import { LogoComponent } from './logo/logo.component';
 import { ReportListComponent } from './report-list/report-list.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CreateReportComponent,
     LoginComponent,
     LogoComponent,
-    ReportListComponent   
+    ReportListComponent,
+    // LiveReportComponent   
   ],
 
   imports: [

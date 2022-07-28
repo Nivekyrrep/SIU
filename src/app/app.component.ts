@@ -36,5 +36,15 @@ export class AppComponent implements DoCheck {
     this.authenticationService.logout();
   }
 
+  //  openNav(){
+  //   document.getElementById("mySidenav").style.width = "250px";
+  // }
+  
+  //  closeNav() {
+  //   document.getElementById("mySidenav").style.width = "0";
+  // }
+  
+
+
   title = 'Web Report Portal Admin';
 }
