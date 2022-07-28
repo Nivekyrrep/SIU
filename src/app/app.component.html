@@ -1,6 +1,7 @@
 <picture>
   <img src="assets/Penske.png" alt="Penske Logo" class="logo" />
-</picture><h1 class="title">
+</picture>
+<h1 class="title">
   {{title}}
 </h1>
 
@@ -8,20 +9,22 @@
 <div class="navbar">
   <div class="navitem">
     <a *ngIf="!isLoggedIn" routerLink="login" routerLinkActive="active" class="nav-link">Home</a>
-    <a *ngIf="isLoggedIn" routerLink="report-list" routerLinkActive="active" class="nav-link">Home</a>
+    <a *ngIf="isLoggedIn" routerLink="splash" routerLinkActive="active" class="nav-link">Home</a>
     <div *ngIf="isLoggedIn" class="dropdown">
       <button class="dropbtn">
         Reports
       </button>
       <div class="dropdown-content">
-        <!-- <a *ngIf="isLoggedIn" routerLink="report-list" routerLinkActive="active" class="nav-link">Report List</a> -->
+        <a *ngIf="isLoggedIn" routerLink="report-list" routerLinkActive="active" class="nav-link">Report List</a>
         <a *ngIf="isLoggedIn" routerLink="/addReport" routerLinkActive="active" class="nav-link">Add Report</a>
         <a *ngIf="isLoggedIn" routerLink="/config" routerLinkActive="active" class="nav-link">Report Config</a>
         <a *ngIf="isLoggedIn" routerLink="/alias" routerLinkActive="active" class="nav-link">Report Alias</a>
         <a *ngIf="isLoggedIn" routerLink="/liveReport" routerLinkActive="active" class="nav-link">Live Reports</a>
       </div>
     </div>
-    <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+    <div class="logout" >
+      <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+    </div>
   </div>
 </div>
 
@@ -33,14 +36,11 @@
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
-
 <h2>Animated Sidenav Example</h2>
 <p>Click on the element below to open the side navigation menu.</p>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-
-
   -->
- 
+
 
 <!-- Change the browser window width to see the image change.-->
 <!-- <div class="nav">

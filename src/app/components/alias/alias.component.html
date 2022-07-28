@@ -1,4 +1,4 @@
-<form name="adminDelRptSearchForm" method="post" action="/webrptportal/adminDelRptSearchLoad.rtf">
+<form name="adminAliasSearchForm" method="post" action="/webrptportal/adminAliasSearchLoad.rtf">
     <table cellspacing="0" cellpadding="0" border="0">
         <tbody>
             <tr>
@@ -7,12 +7,13 @@
                         <tbody>
                             <tr>
                                 <td class="screenhead" width="94%">
-                                    Delete Live Report 
+                                    Report Alias Search
                                 </td>
                                 <td class="screenhead">
-                                     <button routerLink="/report-list" routerLinkActive="active">
-                                        X
-                                    </button>
+                                
+                            <button class="btn btn-success" routerLink="/splash" routerLinkActive="active">
+                                X
+                              </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -24,10 +25,18 @@
                                 <td class="tablecaption">
                                     Search:
                                 </td>
-                                <td class="tablecaption">&nbsp;</td>
+                                <td class="tablecaption"></td>
                                 <td class="tablecaption" align="right">
                                    
-
+                                    
+                                    <button class="btn btn-success"onclick="doOperation(document.adminAliasSearchForm,'aliasAdd');"
+                                        type="submit" accesskey="A">
+                                        Add 
+                                    </button>
+                                    <button class="btn btn-success" onclick="doOperation(document.adminAliasSearchForm,'aliasDelete');"
+                                         type="submit" accesskey="D" >
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -43,27 +52,25 @@
                                     <span class="label">Report Name:</span>
                                 </td>
                                 <td>
-                                    <select name="reportName"
-                                        onkeypress="enterPress(document.adminDelRptSearchForm,'reportSearch');"
-                                        style="width:250" class="field">
-
-                                        <option value="RP803Z">Add values here. </option>
-
-                                    </select>
+                                    <input type="text" name="reportName" maxlength="9" value=""
+                                        onkeypress="enterPress(document.adminAliasSearchForm,'aliasSearch');"
+                                        onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                                </td>
+                                <td width="85">
+                                    <span class="label">Alias Name:</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="aliasName" maxlength="9" value=""
+                                        onkeypress="enterPress(document.adminAliasSearchForm,'aliasSearch');"
+                                        onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');"
-                                        class="buttondesign" type="submit" accesskey="D">
-                                        Delete
-                                    </button>
-                                </td>
-                                <td><button 
-                                        class="buttondesign" type="submit" accesskey="S">
-                                        Search
-                                    </button>
-                                </td>
+                                <td></td>
+                                <td><button class="btn btn-success"onclick="doOperation(document.adminAliasSearchForm,'aliasSearch');"
+                                    type="submit" accesskey="S">
+                                   Search
+                               </button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -94,13 +101,7 @@
                                     Report Name
                                 </td>
                                 <td>
-                                    Run Date
-                                </td>
-                                <td>
-                                    Run Time
-                                </td>
-                                <td>
-                                    Loaded Timestamp
+                                    Alias
                                 </td>
                             </tr>
 

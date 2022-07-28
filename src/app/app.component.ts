@@ -1,5 +1,5 @@
 import { Component, DoCheck } from '@angular/core';
-import { AuthenticationService } from './login/auth.service';
+import { AuthenticationService } from './services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -46,5 +46,5 @@ export class AppComponent implements DoCheck {
   
 
 
-  title = 'Web Report Portal Admin';
+  title = 'Web Report Portal';
 }

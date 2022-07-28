@@ -19,7 +19,7 @@
                     <td class="tablecaption"></td>
                     <td class="tablecaption" > 
                       
-                        <button routerLink="/addReport" routerLinkActive="active">
+                        <button class="btn btn-success" routerLink="/addReport" routerLinkActive="active">
                             Add Report
                         </button>
                         </td>
@@ -46,8 +46,9 @@
                         <input type="text" name="title" value="" onkeypress="pressEnterKey(document.adminReportSearchForm,'reportSearch');" onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
                     </td>
                 </tr>
+                <br>
                 <tr>
-                    <td> <button onclick="fnValidateSearch(document.adminReportSearchForm,'reportSearch');" class="buttondesign" accesskey="S">
+                    <td> <button class="btn btn-success"onclick="fnValidateSearch(document.adminReportSearchForm,'reportSearch');"  accesskey="S">
                         Search
                     </button></td>
                     <td>
@@ -57,6 +58,7 @@
         </table>
         </td>
     </tr>
+    <br><br>
     <tr>
         <td>
             <table class="tablewidth_850">

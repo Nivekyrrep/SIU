@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LiveReport } from '../models/LiveReport';
+import { LiveReport } from 'src/app/models/LiveReport';
 
 @Component({
   selector: 'app-live-report',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from './auth.service';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   successMessage!: string;
   invalidLogin = false;
   loginSuccess = false;
+  Token: any;
+  Auth: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,10 +31,11 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = 'Login Successful.';
-      this.router.navigate(['/report-list']);
+      this.router.navigate(['/splash']);
     }, () => {
       this.invalidLogin = true;
       this.loginSuccess = false;
     });      
   }
+
 }

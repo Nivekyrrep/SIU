@@ -11,16 +11,17 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AliasComponent } from './alias/alias.component';
-import { ConfigComponent } from './config/config.component';
-import { CreateReportComponent } from './create-report/create-report.component';
+import { AliasComponent } from './components/alias/alias.component';
+import { ConfigComponent } from './components/config/config.component';
+import { CreateReportComponent } from './components/create-report/create-report.component';
 import { HttpInterceptorService } from './services/http-interceptor.service';
 // import { LiveReportComponent } from './live-report/live-report.component';
-import { LoginComponent } from './login/login.component';
-import { LogoComponent } from './logo/logo.component';
-import { ReportListComponent } from './report-list/report-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { ReportListComponent } from './components/report-list/report-list.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SplashComponent } from './components/splash/splash.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LoginComponent,
     LogoComponent,
     ReportListComponent,
+    SplashComponent,
     // LiveReportComponent   
   ],
 

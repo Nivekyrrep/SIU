@@ -12,6 +12,7 @@ export class AuthenticationService {
 
   public username: any;
   public password: any;
+  static username: any;
 
   constructor(private http: HttpClient) {
    
