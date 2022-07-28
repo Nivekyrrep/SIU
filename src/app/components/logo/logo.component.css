@@ -1,0 +1,9 @@
+.codeDealer{
+    
+        width:auto;
+        text-align:center;
+        padding:20px;
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+    }
