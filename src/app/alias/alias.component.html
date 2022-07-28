@@ -1,1 +1,132 @@
-<p>alias works!</p>
+<form name="adminAliasSearchForm" method="post" action="/webrptportal/adminAliasSearchLoad.rtf">
+    <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="screenhead" width="94%">
+                                    Report Alias Search &nbsp;
+                                </td>
+                                <td class="screenhead">
+                                    <!-- The button tag is used instead of the html:button as struts does not have an option 
+                            only to underline the single letter of the Button Value displayed.
+                            Hence the em tag is used.  -->
+                                    <button onclick="doOperation(document.adminAliasSearchForm, 'quit');"
+                                        class="buttondesign" type="submit" accesskey="Q">
+                                        <em class="buttoninitial">Q</em>uit
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+                                    Search:
+                                </td>
+                                <td class="tablecaption">&nbsp;</td>
+                                <td class="tablecaption" align="right">
+                                    <!-- The button tag is used instead of the html:button as struts does not have an option 
+                            only to underline the single letter of the Button Value displayed.
+                            Hence the em tag is used.  -->
+                                    <button onclick="doOperation(document.adminAliasSearchForm,'aliasSearch');"
+                                        class="buttondesign" type="submit" accesskey="S">
+                                        <em class="buttoninitial">S</em>earch
+                                    </button>
+                                    <button onclick="doOperation(document.adminAliasSearchForm,'aliasAdd');"
+                                        class="buttondesign" type="submit" accesskey="A">
+                                        <em class="buttoninitial">A</em>dd Alias
+                                    </button>
+                                    <button onclick="doOperation(document.adminAliasSearchForm,'aliasDelete');"
+                                        class="buttondesign" type="submit" accesskey="D">
+                                        <em class="buttoninitial">D</em>elete Alias
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td width="85">
+                                    <span class="label">Report Name:</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="reportName" maxlength="9" value=""
+                                        onkeypress="enterPress(document.adminAliasSearchForm,'aliasSearch');"
+                                        onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                                </td>
+                                <td width="85">
+                                    <span class="label">Alias Name:</span>
+                                </td>
+                                <td>
+                                    <input type="text" name="aliasName" maxlength="9" value=""
+                                        onkeypress="enterPress(document.adminAliasSearchForm,'aliasSearch');"
+                                        onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+                                    Results:
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
+                        <tbody>
+                            <tr class="listtitlewidth_400">
+                                <td width="20">
+                                    <img src="/webrptportal/images/checkmark.gif">
+                                </td>
+                                <td class="tablewidth_240">
+                                    Report Name
+                                </td>
+                                <td>
+                                    Alias
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="tablewidth_850" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" name="Option">
+
+</form>

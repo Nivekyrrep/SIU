@@ -1,1 +1,130 @@
-<p>live-report works!</p>
+<form name="adminDelRptSearchForm" method="post" action="/webrptportal/adminDelRptSearchLoad.rtf">
+    <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="screenhead" width="94%">
+                                    Delete Live Report &nbsp;
+                                </td>
+                                <td class="screenhead">
+                                    <!-- The button tag is used instead of the html:button as struts does not have an option 
+                            only to underline the single letter of the Button Value displayed.
+                            Hence the em tag is used.  -->
+                                    <button onclick="doOperation(document.adminDelRptSearchForm, 'quit');"
+                                        class="buttondesign" type="submit" accesskey="Q">
+                                        <em class="buttoninitial">Q</em>uit
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+                                    Search:
+                                </td>
+                                <td class="tablecaption">&nbsp;</td>
+                                <td class="tablecaption" align="right">
+                                    <!-- The button tag is used instead of the html:button as struts does not have an option 
+                            only to underline the single letter of the Button Value displayed.
+                            Hence the em tag is used.  -->
+                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportSearch');"
+                                        class="buttondesign" type="submit" accesskey="S">
+                                        <em class="buttoninitial">S</em>earch
+                                    </button>
+                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');"
+                                        class="buttondesign" type="submit" accesskey="D">
+                                        <em class="buttoninitial">D</em>elete Report
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td width="85">
+                                    <span class="label">Report Name:</span>
+                                </td>
+                                <td>
+                                    <select name="reportName"
+                                        onkeypress="enterPress(document.adminDelRptSearchForm,'reportSearch');"
+                                        style="width:250" class="field">
+
+
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+                                    Results:
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
+                        <tbody>
+                            <tr class="listtitlewidth_400">
+                                <td width="20">
+                                    <img src="/webrptportal/images/checkmark.gif">
+                                </td>
+                                <td class="tablewidth_240">
+                                    Report Name
+                                </td>
+                                <td>
+                                    Run Date
+                                </td>
+                                <td>
+                                    Run Time
+                                </td>
+                                <td>
+                                    Loaded Timestamp
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="tablewidth_850" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" name="Option">
+
+</form>
