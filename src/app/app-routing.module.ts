@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AliasComponent } from './alias/alias.component';
 import { ConfigComponent } from './config/config.component';
 import { CreateReportComponent } from './create-report/create-report.component';
+import { LiveReportComponent } from './live-report/live-report.component';
 import { LoginComponent } from './login/login.component';
 import { LogoComponent } from './logo/logo.component';
 import { ReportListComponent } from './report-list/report-list.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'addReport', component: CreateReportComponent},
   {path: 'config', component: ConfigComponent},
   {path: 'alias', component: AliasComponent},
+  {path: 'liveReport', component: LiveReportComponent},
   {path: 'logo', component: LogoComponent},
   // {path: 'employees', redirectTo: 'employees', pathMatch: 'full'},
   // {path: 'create-employee', component: CreateEmployeeComponent},

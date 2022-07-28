@@ -13,9 +13,8 @@
                                     <!-- The button tag is used instead of the html:button as struts does not have an option 
                             only to underline the single letter of the Button Value displayed.
                             Hence the em tag is used.  -->
-                                    <button onclick="doOperation(document.adminDelRptSearchForm, 'quit');"
-                                        class="buttondesign" type="submit" accesskey="Q">
-                                        <em class="buttoninitial">Q</em>uit
+                                    <button routerLink="/report-list" routerLinkActive="active">
+                                        X
                                     </button>
                                 </td>
                             </tr>
@@ -33,14 +32,7 @@
                                     <!-- The button tag is used instead of the html:button as struts does not have an option 
                             only to underline the single letter of the Button Value displayed.
                             Hence the em tag is used.  -->
-                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportSearch');"
-                                        class="buttondesign" type="submit" accesskey="S">
-                                        <em class="buttoninitial">S</em>earch
-                                    </button>
-                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');"
-                                        class="buttondesign" type="submit" accesskey="D">
-                                        <em class="buttoninitial">D</em>elete Report
-                                    </button>
+
                                 </td>
                             </tr>
                         </tbody>
@@ -60,14 +52,23 @@
                                         onkeypress="enterPress(document.adminDelRptSearchForm,'reportSearch');"
                                         style="width:250" class="field">
 
-
+                                        <option value="RP803Z">Add values here. </option>
 
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
+                                <td>
+                                    <button onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');"
+                                        class="buttondesign" type="submit" accesskey="D">
+                                        Delete
+                                    </button>
+                                </td>
+                                <td><button onclick="doOperation(document.adminDelRptSearchForm,'reportSearch');"
+                                        class="buttondesign" type="submit" accesskey="S">
+                                        Search
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

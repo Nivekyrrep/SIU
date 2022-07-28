@@ -1,12 +1,12 @@
-// import { Component, OnInit } from '@angular/core';
-// import { LiveReport } from '../models/LiveReport';
+import { Component, OnInit } from '@angular/core';
+import { LiveReport } from '../models/LiveReport';
 
-// @Component({
-//   selector: 'app-live-report',
-//   templateUrl: './live-report.component.html',
-//   styleUrls: ['./live-report.component.css']
-// })
-// export class LiveReportComponent implements OnInit {
+@Component({
+  selector: 'app-live-report',
+  templateUrl: './live-report.component.html',
+  styleUrls: ['./live-report.component.css']
+})
+export class LiveReportComponent implements OnInit {
 
 //   liveReports: LiveReport[] = [];
 //   currentLiveReport: LiveReport = {};
@@ -17,9 +17,9 @@
 //   pageSize = 3;
 //   pageSizes = [3, 6, 9];
 //   constructor(private LiveReportService: LiveReportService) { }
-//   ngOnInit(): void {
+  ngOnInit(): void {
 //     this.retrieveLiveReports();
-//   }
+  }
 //   getRequestParams(searchTitle: string, page: number, pageSize: number): any {
 //     let params: any = {};
 //     if (searchTitle) {
@@ -65,4 +65,4 @@
 //       this.currentTutorial = tutorial;
 //       this.currentIndex = index;
 //     }
-//   }
+  }
