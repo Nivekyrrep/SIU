@@ -10,42 +10,42 @@ import { AliasService } from 'src/app/services/alias.service';
 })
 
 export class AliasComponent implements OnInit {
-  Aliases: Alias[] = [];
-  currentAlias: Alias = {
-    alias: '',
-    aliasid: 0,
-    reportid: 0
-  };
+  Aliases: Alias[]=[];
+  currentAlias!: Alias;
+    alias= '';
+    aliasid= 0;
+    reportid= 0;
+  
 
 
   constructor(private AliasService: AliasService) { }
 
   ngOnInit(): void {
-  //   this.retrieveAliases();
-  // }
+    this.retrieveAliases();
+  }
 
-  // retrieveAliases(): void {
-    
-  //   this.AliasService.getAll()
-  //     .subscribe(
-  //       data => {
-  //         this.Aliases = data;
-  //         console.log(data);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       });
-  // }
+  retrieveAliases(): void {
 
-  
-// ---------------------------
-// ---------------------------
+    this.AliasService.getAll().subscribe(data => {
+          this.Aliases = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 
 
-    // getRequestParams(): any {
+  // ---------------------------
+  // ---------------------------
+
+
+  // getRequestParams(): any {
   //   let params: any = {};
 
   //   return params;
   // }
 }
-}
+
+
+// }

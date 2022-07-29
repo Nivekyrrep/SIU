@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Alias } from 'src/app/models/alias';
 import { Observable } from 'rxjs';
+import { Alias } from 'src/app/models/alias';
 
 const baseUrl = 'http://localhost:8280/AdminPortal/api/v1/aliases';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +12,10 @@ const baseUrl = 'http://localhost:8280/AdminPortal/api/v1/aliases';
 export class AliasService {
     constructor(private http: HttpClient) { }
     
-    // getAll() {
-    //   Observable<Alias> 
-    //   return this.http.get<Alias[]>(baseUrl);
-    // }
-  
+    getAll(): Observable<any> {
+      return this.http.get<any>(baseUrl);
+    }
+}
 
 // ---------------------------
 // ---------------------------
@@ -41,4 +41,6 @@ export class AliasService {
     // findByTitle(title: any): Observable<Alias[]> {
     //   return this.http.get<Alias[]>(`${baseUrl}?title=${title}`);
     // }
-  }
+
+
+  // }
