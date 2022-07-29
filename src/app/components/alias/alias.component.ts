@@ -10,12 +10,15 @@ import { AliasService } from 'src/app/services/alias.service';
 })
 
 export class AliasComponent implements OnInit {
-  Aliases: Alias[]=[];
-  currentAlias!: Alias;
-    alias= '';
-    aliasid= 0;
-    reportid= 0;
+  aliases?: Alias[];
+  currentAlias: Alias = {};
+  currentIndex = -1;
   
+  // page = 1;
+  // count = 0;
+  // pageSize = 3;
+  // pageSizes = [3, 6, 9];
+
 
 
   constructor(private AliasService: AliasService) { }
@@ -27,14 +30,25 @@ export class AliasComponent implements OnInit {
   retrieveAliases(): void {
 
     this.AliasService.getAll().subscribe(data => {
-          this.Aliases = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
+      const {totalItems} = data;
+      this.aliases = data;
+      // this.count = totalItems;
+      console.log(data);
+    },
+      error => {
+        console.log(error);
+      });
+    }
+      setActiveAlias(alias: Alias, index: number): void {
+        this.currentAlias = alias;
+        this.currentIndex = index;
   }
-
+ 
+  refreshList(): void {
+    this.retrieveAliases();
+    this.currentAlias = {};
+    this.currentIndex = -1;
+  }
 
   // ---------------------------
   // ---------------------------
@@ -48,4 +62,3 @@ export class AliasComponent implements OnInit {
 }
 
 
-// }

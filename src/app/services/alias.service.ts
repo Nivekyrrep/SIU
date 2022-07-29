@@ -15,32 +15,32 @@ export class AliasService {
     getAll(): Observable<any> {
       return this.http.get<any>(baseUrl);
     }
-}
+
 
 // ---------------------------
 // ---------------------------
 
 
 
-    // get(id: any): Observable<any> {
-    //   return this.http.get(`${baseUrl}/${id}`);
-    // }
+    get(alias: any): Observable<any> {
+      return this.http.get(`${baseUrl}/${alias}`);
+    }
     
-    // create(data: any): Observable<any> {
-    //   return this.http.post(baseUrl, data);
-    // }
+    create(data: any): Observable<any> {
+      return this.http.post(baseUrl, data);
+    }
     
-    // update(id: any, data: any): Observable<any> {
-    //   return this.http.put(`${baseUrl}/${id}`, data);
-    // }
+    update(id: any, data: any): Observable<any> {
+      return this.http.put(`${baseUrl}/${id}`, data);
+    }
     
-    // // delete(id: any): Observable<any> {
-    // //   return this.http.delete(`${baseUrl}/${id}`);
-    // // }
-
-    // findByTitle(title: any): Observable<Alias[]> {
-    //   return this.http.get<Alias[]>(`${baseUrl}?title=${title}`);
+    // delete(id: any): Observable<any> {
+    //   return this.http.delete(`${baseUrl}/${id}`);
     // }
 
+    findByTitle(title: any): Observable<Alias[]> {
+      return this.http.get<Alias[]>(`${baseUrl}?title=${title}`);
+    }
 
-  // }
+
+  }

@@ -17,8 +17,10 @@ const routes: Routes = [
   {path: 'addReport', component: CreateReportComponent},
   {path: 'config', component: ConfigComponent},
   {path: 'alias', component: AliasComponent},
+  {path: 'alias/:id', component: AliasComponent},
   {path: 'liveReport', component: LiveReportComponent},
   {path: 'logo', component: LogoComponent},
+  
   // {path: 'employees', redirectTo: 'employees', pathMatch: 'full'},
   
   // {path: 'create-employee', component: CreateEmployeeComponent},
@@ -27,7 +29,7 @@ const routes: Routes = [
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
