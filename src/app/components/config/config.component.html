@@ -28,3 +28,92 @@
   <br><br>
     </form>
   </div>
+<div class="container">
+  <table>
+    <ul>
+        <li 
+        class="list-group-item" 
+        *ngFor=
+        "let ReportConfig of reportConfigs ;
+        let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveReportConfig(ReportConfig, i)">
+        <div class="report table">
+            <label><strong>ID:</strong></label> {{ ReportConfig.CONFIGID }}
+        </div>
+        <div>
+            <label><strong>Dimension Start Col:</strong></label>
+            {{ ReportConfig.dimensionsStartCol }}
+        </div>
+        <div>
+            <label><strong>Dimension Start Row:</strong></label>
+            {{ ReportConfig.dimensionsStartRow }}
+        </div>
+        <div>
+            <label><strong>Dimension Length:</strong></label>
+            {{ ReportConfig.dimensionLength }}
+        </div>
+        <div>
+            <label><strong>Format Type:</strong></label>
+            {{ ReportConfig.formatType }}
+        </div>
+        <div>
+            <label><strong>Post Title:</strong></label>
+            {{ ReportConfig.postTitle }}
+        </div>
+        <div>
+            <label><strong>C Map ID:</strong></label>
+            {{ ReportConfig.cmapId }}
+        </div>
+        <div>
+            <label><strong>Dim ID:</strong></label>
+            {{ ReportConfig.dimId }}
+        </div>
+        <div>
+            <label><strong>Dim Value:</strong></label>
+            {{ ReportConfig.dimValue }}
+        </div>
+        <div>
+            <label><strong>Group ID:</strong></label>
+            {{ ReportConfig.configGroupId }}
+        </div>
+        <div>
+            <label><strong>Added By:</strong></label>
+            {{ ReportConfig.addedBy }}
+        </div>
+        <div>
+            <label><strong>Modified By:</strong></label>
+            {{ ReportConfig.modifiedBy }}
+        </div>
+        <div>
+            <label><strong>Status:</strong></label>
+            {{ ReportConfig.status }}
+        </div>
+        <div>
+            <label><strong>Deleted By:</strong></label>
+            {{ ReportConfig.deletedBy }}
+        </div>
+        <div>
+            <label><strong>Grouped:</strong></label>
+            {{ ReportConfig.grouped }}
+        </div>
+        <div>
+            <label><strong>Group Order:</strong></label>
+            {{ ReportConfig.groupOrder }}
+        </div>
+        <div>
+            <label><strong>Excel Column:</strong></label>
+            {{ ReportConfig.excelColumn }}
+        </div>
+        <div>
+            <label><strong>Excel Row:</strong></label>
+            {{ ReportConfig.excelRow }}
+        </div>
+        <div>
+            <label><strong>dim Rep ID:</strong></label>
+            {{ ReportConfig.dimRepId }}
+        </div>
+        </li>
+    </ul>
+</table>
+</div>

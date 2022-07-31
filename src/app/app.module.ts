@@ -15,13 +15,14 @@ import { AliasComponent } from './components/alias/alias.component';
 import { ConfigComponent } from './components/config/config.component';
 import { CreateReportComponent } from './components/create-report/create-report.component';
 import { HttpInterceptorService } from './services/http-interceptor.service';
-// import { LiveReportComponent } from './live-report/live-report.component';
+import { LiveReportComponent } from './components/live-report/live-report.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ReportListComponent } from './components/report-list/report-list.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SplashComponent } from './components/splash/splash.component';
+
 
 
 @NgModule({
@@ -30,11 +31,12 @@ import { SplashComponent } from './components/splash/splash.component';
     AliasComponent,
     ConfigComponent,
     CreateReportComponent,
+    LiveReportComponent, 
     LoginComponent,
     LogoComponent,
     ReportListComponent,
     SplashComponent,
-    // LiveReportComponent   
+      
   ],
 
   imports: [
@@ -43,10 +45,12 @@ import { SplashComponent } from './components/splash/splash.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     MatBadgeModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+
     NgxPaginationModule
   ],
 

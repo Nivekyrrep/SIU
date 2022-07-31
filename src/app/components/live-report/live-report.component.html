@@ -1,128 +1,182 @@
-
-    <table cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td>
-                    <table class="tablewidth_850" cellspacing="0" cellpadding="0">
-                        <tbody>
-                            <tr>
-                                <td class="screenhead" width="94%">
-                                    Live Report
-                                </td>
-                                <td class="screenhead">
-
-
+<table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+        <tr>
+            <td>
+                <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td class="screenhead" width="94%">
+                                Live Report
+                            </td>
+                            <td class="screenhead">
                                 <!--button not working??? -->
-                            <button class="btn btn-success"routerLink="/report-list" routerLinkActive="active">
-                                X
-                              </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table cellspacing="0" cellpadding="0" class="tablewidth_850">
-                        <tbody>
-                            <tr>
-                                <td class="tablecaption">
-                                    Search:
-                                </td>
-                                <td class="tablecaption"> </td>
-                                <td class="tablecaption" align="right">
-                                   
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table class="tablewidth_850">
-                        <tbody>
-                            <tr>
-                                <td width="85">
-                                    <span class="label">Report Name:</span>
-                                </td>
-                                <td>
-                                    <select name="reportName"
-                                        onkeypress="enterPress(document.adminDelRptSearchForm,'reportSearch');"
-                                        style="width:250" class="field">
-
-                                        <option value="RP803Z">Add values here. </option>
-
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="btn btn-success"onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');"
-                                         type="submit" accesskey="D">
-                                        Delete
-                                    </button>
-                                </td>
-                                <td><button class="btn btn-success"
-                                         type="submit" accesskey="S">
-                                        Search
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <br><br>
-            <tr>
-                <td>
-                    <table class="tablewidth_850">
-                        <tbody>
-                            <tr>
-                                <td class="tablecaption">
-                                    Results:
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
-                        <tbody>
-                            <tr class="listtitlewidth_400">
-                                <td width="20">
-                                    <img src="/webrptportal/images/checkmark.gif">
-                                </td>
-                                <td class="tablewidth_240">
-                                    Report Name
-                                </td>
-                                <td>
-                                    Run Date
-                                </td>
-                                <td>
-                                    Run Time
-                                </td>
-                                <td>
-                                    Loaded Timestamp
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                    <table class="tablewidth_850" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
- 
+                                <button class="btn btn-success" routerLink="/report-list" routerLinkActive="active">
+                                    X
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table cellspacing="0" cellpadding="0" class="tablewidth_850">
+                    <tbody>
+                        <tr>
+                            <td class="tablecaption">
+                                Search:
+                            </td>
+                            <td class="tablecaption"> </td>
+                            <td class="tablecaption" align="right">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="tablewidth_850">
+                    <tbody>
+                        <tr>
+                            <td width="85">
+                                <span class="label">Report Name:</span>
+                            </td>
+                            <td>
+                                <select name="reportName"
+                                    onkeypress="enterPress(document.adminDelRptSearchForm,'reportSearch');"
+                                    style="width:250" class="field">
+                                    <option value="RP803Z">Add values here. </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-success"
+                                    onclick="doOperation(document.adminDelRptSearchForm,'reportDelete');" type="submit"
+                                    accesskey="D">
+                                    Delete
+                                </button>
+                            </td>
+                            <td><button class="btn btn-success" type="submit" accesskey="S">
+                                    Search
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <br><br>
+        <tr>
+            <td>
+                <table class="tablewidth_850">
+                    <tbody>
+                        <tr>
+                            <td class="tablecaption">
+                                Results:
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
+                    <tbody>
+                        <tr class="listtitlewidth_400">
+                            <td width="20">
+                                <img src="/webrptportal/images/checkmark.gif">
+                            </td>
+                            <td class="tablewidth_240">
+                                Report Name
+                            </td>
+                            <td>
+                                Run Date
+                            </td>
+                            <td>
+                                Run Time
+                            </td>
+                            <td>
+                                Loaded Timestamp
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <ul>
+                        <li class="list-group-item" 
+                        *ngFor="let LiveReport of liveReports ;
+                        let i = index" 
+                        [class.active]="i == currentIndex" 
+                        (click)="setActiveLiveReport(LiveReport, i)">
+                        
+                            <div class="report table">
+                                <label><strong>ID:</strong></label> {{ LiveReport.RDOCID }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoco Date:</strong></label>
+                                {{ LiveReport.RDOCODATE }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoce Date:</strong></label>
+                                {{ LiveReport.RDOCEDATE }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoc Title:</strong></label>
+                                {{ LiveReport.RDOCTITLE }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoco Abstract:</strong></label>
+                                {{ LiveReport.RDOCABSTRACT }}
+                            </div>
+                            <div>
+                                <label><strong>Dat Id:</strong></label>
+                                {{ LiveReport.DATID }}
+                            </div>
+                            <div>
+                                <label><strong>Dod SSO:</strong></label>
+                                {{ LiveReport.RDOCSSO }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoco Desc:</strong></label>
+                                {{ LiveReport.RDOCDESC }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoce Time:</strong></label>
+                                {{ LiveReport.RDOCRTIME }}
+                            </div>
+                            <div>
+                                <label><strong>Rdoc Title:</strong></label>
+                                {{ LiveReport.RDOCTITLE }}
+                            </div>
+                            <div>
+                                <label><strong>Doco Id:</strong></label>
+                                {{ LiveReport.DOCTID }}
+                            </div>
+                            <div>
+                                <label><strong>Allow Print:</strong></label>
+                                {{ LiveReport.RDALLOWPRNT }}
+                            </div>
+                            <div>
+                                <label><strong>P Date:</strong></label>
+                                {{ LiveReport.PDATE }}
+                            </div>
+                            <div>
+                                <label><strong>Allow Overrides:</strong></label>
+                                {{ LiveReport.ALLOWOVERRIDES }}
+                            </div>
+                            <div>
+                                <label><strong>Num Columns:</strong></label>
+                                {{ LiveReport.NUMCOLUMNS }}
+                            </div>
+                        </li>
+                    </ul>
+                </table>
+</table>
+<table class="tablewidth_850" cellspacing="0">
+    <tbody>
+        <tr>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
