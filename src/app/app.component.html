@@ -1,0 +1,108 @@
+<picture>
+  <img src="assets/Penske.png" alt="Penske Logo" class="logo" />
+</picture>
+<h1 class="title">
+  {{title}}
+</h1>
+
+
+<div class="navbar">
+  <div class="navitem">
+    <a *ngIf="!isLoggedIn" routerLink="login" routerLinkActive="active" class="nav-link">Home</a>
+    <a *ngIf="isLoggedIn" routerLink="splash" routerLinkActive="active" class="nav-link">Home</a>
+    <div *ngIf="isLoggedIn" class="dropdown">
+      <button class="dropbtn">
+        Reports
+      </button>
+      <div class="dropdown-content">
+        <a *ngIf="isLoggedIn" routerLink="report-list" routerLinkActive="active" class="nav-link">Report List</a>
+        <a *ngIf="isLoggedIn" routerLink="/addReport" routerLinkActive="active" class="nav-link">Add Report</a>
+        <a *ngIf="isLoggedIn" routerLink="/config" routerLinkActive="active" class="nav-link">Report Config</a>
+        <a *ngIf="isLoggedIn" routerLink="/alias" routerLinkActive="active" class="nav-link">Report Alias</a>
+        <a *ngIf="isLoggedIn" routerLink="/liveReport" routerLinkActive="active" class="nav-link">Live Reports</a>
+      </div>
+    </div>
+    <div class="logout" >
+      <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer ">
+  <br>
+  <br>
+  <br>
+  <div class="footer">
+    <span>
+      This product was createad by the
+      <a routerLink="logo" routerLinkActive="active">codeDealers().</a>
+    </span>
+    <br>
+    <span>All Rights Reserved 2022</span>
+  </div>
+</footer>
+
+
+<!-- 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+<h2>Animated Sidenav Example</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  -->
+
+
+<!-- Change the browser window width to see the image change.-->
+<!-- <div class="nav">
+  <div class="navbar">
+    <li class = "nav-item">
+      <a *ngIf="!isLoggedIn"routerLink="login" routerLinkActive="active" class="nav-link" >Home out</a>
+  </li>
+  <li class = "nav-item">
+    <a *ngIf="isLoggedIn"routerLink="report-list" routerLinkActive="active" class="nav-link" >Home in</a>
+</li>
+    <li>
+      <div *ngIf="isLoggedIn" class="dropdown">
+      <button class="dropbtn">
+        Reports
+      </button>
+      <div class="dropdown-content">
+        <a href="#">
+          <a *ngIf="isLoggedIn" routerLink="report-list" routerLinkActive="active" class="nav-link" >Reports</a>
+      </a>
+        <a href="#">Report Config</a>
+        <a href="#">Report Alias</a>
+      </div>
+    </div> 
+    <li class = "nav-item">
+      <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+  </li>
+  </div>
+<nav class="nav">
+  <ul class = "navbar-nav">
+    <li class = "nav-item">
+        <a *ngIf="!isLoggedIn"routerLink="login" routerLinkActive="active" class="nav-link" >Home Link Picture logged out</a>
+    </li>
+    <li class = "nav-item">
+      <a *ngIf="isLoggedIn"routerLink="report-list" routerLinkActive="active" class="nav-link" >Home Link Picture logged in</a>
+  </li> 
+ 
+      <li class = "nav-item">
+          <a *ngIf="isLoggedIn" routerLink="create-employee" routerLinkActive="active" class="nav-link" >Add Employee</a>
+      </li> -->
+<!-- </ul>
+  <ul class="navbar-nav navbar-collapse justify-content-end"> -->
+<!-- <li>
+        <a *ngIf="!isLoggedIn" class="nav-link" href="/login">Login</a>
+    </li>
+</ul>
+</nav> 
+</div> -->
