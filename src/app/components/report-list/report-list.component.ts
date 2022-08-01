@@ -39,8 +39,8 @@ export class ReportListComponent implements OnInit {
         console.log(error);
       });
     }
-      setActiveReport(alias: Report, index: number): void {
-        this.currentReport = alias;
+      setActiveReport(report: Report, index: number): void {
+        this.currentReport = report;
         this.currentIndex = index;
   }
  
