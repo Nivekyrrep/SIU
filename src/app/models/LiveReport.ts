@@ -1,16 +1,16 @@
 export class LiveReport {
-    RDOCID?: number;
-    RDOCODATE?: string;
-    RDOCEDATE?: string;
-    RDOCTITLE?: string;
-    RDOCABSTRACT?: string;
-    DATID?: number;
-    RDOCSSO?: string;
-    RDOCDESC?: string;
-    RDOCRTIME?: string;
-    DOCTID?: number;
-    RDALLOWPRNT?: number;
-    PDATE?: number;
-    ALLOWOVERRIDES?: number;
-    NUMCOLUMNS?: number;
+    rDocId?: number;
+    rdocoDate?: string;
+    rdoceDate?: string;
+    rdocTitle?: string;
+    rdocAbstract?: string;
+    datId?: number;
+    rdocSso?: string;
+    rdocDesc?: string;
+    rdocrTime?: string;
+    doctId?: number;
+    rdAllowPrnt?: number;
+    pDate?: number;
+    allowOverrides?: number;
+    numColumns?: number;
 }

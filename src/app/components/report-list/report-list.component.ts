@@ -8,6 +8,7 @@ import { ReportListService } from 'src/app/services/report-list.service';
   templateUrl: './report-list.component.html',
   styleUrls: ['./report-list.component.css']
 })
+
 export class ReportListComponent implements OnInit {
 
   reports: Report[]= [];
@@ -18,8 +19,6 @@ export class ReportListComponent implements OnInit {
   count = 0;
   pageSize = 10;
   pageSizes = [3, 6, 9];
-
-
 
   constructor(private ReportListService: ReportListService) { }
 

@@ -12,27 +12,30 @@ const baseUrl = 'http://localhost:8280/AdminPortal/api/v1/liveReports';
 export class LiveReportService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get<any>(baseUrl);
+  getAll(params: any): Observable<any> {
+    return this.http.get<any>(baseUrl, { params });
   }
 
   // ---------------------------
   // ---------------------------
 
-  get(liveReport: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${liveReport}`);
+  get(RDOCID: any): Observable<LiveReport> {
+    return this.http.get(`${baseUrl}/${RDOCID}`);
   }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
-  update(id: any, data: any): Observable<any> {
+
+  update(id: any, data: any): Observable<LiveReport> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
+
   // delete(id: any): Observable<any> {
   //   return this.http.delete(`${baseUrl}/${id}`);
   // }
 
-  findByTitle(title: any): Observable<LiveReport[]> {
-    return this.http.get<LiveReport[]>(`${baseUrl}?title=${title}`);
+  findByTitle(liveReport: any): Observable<LiveReport[]> {
+    return this.http.get<LiveReport[]>(`${baseUrl}?liveReport=${liveReport}`);
   }
 }

@@ -6,11 +6,11 @@
                     <tbody>
                         <tr>
                             <td class="screenhead" width="94%">
-                                Live Report
+                                <h1>Live Report</h1>
                             </td>
                             <td class="screenhead">
                                 <!--button not working??? -->
-                                <button class="btn btn-success" routerLink="/report-list" routerLinkActive="active">
+                                <button class="btn btn-success" routerLink="/splash" routerLinkActive="active">
                                     X
                                 </button>
                             </td>
@@ -71,16 +71,60 @@
                     <tbody>
                         <tr>
                             <td class="tablecaption">
-                                Results:
+                                <h1>Results</h1>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </td>
-        </tr>
+            </tr>
+         </tbody>
+     </table>
+     <table>
+   
+            <div class="col-md-12">
+                <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  [responsive]="true"
+                  (pageChange)="handlePageChange($event)"
+                ></pagination-controls>
+              </div>
+            <div>
+                <table class="result-table">
+        
+                    <thead>
+                        <tr>
+                            <th class="pl-15">Report Description</th>
+                            <th>Timestamp</th>
+                            
+           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let LiveReport of liveReports | paginate : {
+                            itemsPerPage: pageSize,
+                            currentPage: page,
+                            totalItems: count
+                        };
+                                  let i = index" 
+                                  [class.active]="i == currentIndex" 
+                                  (click)="setActiveLiveReport(LiveReport, i)">
+        
+                            <td class="pl-15">{{ LiveReport.rdocDesc }}</td>
+                            <td>{{ LiveReport.rdocrTime }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
         <tr>
             <td>
-                <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
+
+
+
+                <!-- <table class="tablewidth_850" height="23px" cellspacing="0" border="0">
                     <tbody>
                         <tr class="listtitlewidth_400">
                             <td width="20">
@@ -170,7 +214,7 @@
                             </div>
                         </li>
                     </ul>
-                </table>
+                </table> -->
 </table>
 <table class="tablewidth_850" cellspacing="0">
     <tbody>
