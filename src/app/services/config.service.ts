@@ -12,8 +12,8 @@ const baseUrl = 'http://localhost:8280/AdminPortal/api/v1/reportConfig';
 export class ConfigService {
     constructor(private http: HttpClient) { }
     
-    getAll(): Observable<any> {
-      return this.http.get<any>(baseUrl);
+    getAll(params: any): Observable<any> {
+      return this.http.get<any>(baseUrl, { params });
     }
 
 
@@ -22,7 +22,7 @@ export class ConfigService {
 
 
 
-    get(reportConfig: any): Observable<any> {
+    get(reportConfig: any): Observable<ReportConfig> {
       return this.http.get(`${baseUrl}/${reportConfig}`);
     }
     
@@ -30,7 +30,7 @@ export class ConfigService {
       return this.http.post(baseUrl, data);
     }
     
-    update(id: any, data: any): Observable<any> {
+    update(id: any, data: any): Observable<ReportConfig> {
       return this.http.put(`${baseUrl}/${id}`, data);
     }
     
@@ -38,8 +38,8 @@ export class ConfigService {
     //   return this.http.delete(`${baseUrl}/${id}`);
     // }
 
-    findByTitle(title: any): Observable<ReportConfig[]> {
-      return this.http.get<ReportConfig[]>(`${baseUrl}?title=${title}`);
+    findByTitle(reportConfig: any): Observable<ReportConfig[]> {
+      return this.http.get<ReportConfig[]>(`${baseUrl}?reportConfig=${reportConfig}`);
     }
 
 

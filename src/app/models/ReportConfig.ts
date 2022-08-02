@@ -1,5 +1,5 @@
 export class ReportConfig {
-    CONFIGID?: number;
+    configID?: number;
     dimensionsStartCol?: number;
     dimensionsStartRow?: number;
     dimensionLength?: number;

@@ -9,7 +9,7 @@
     <h3 class="form-label">Search:</h3>
     <form>
         <label for="ReportName" class="reportname">Report Name:</label>
-        <select name="ReportName" id="ReportName">
+        <select name="ReportName" id="ReportName" >
             <option value=""></option>
             <option value=""></option>
             <option value=""></option>
@@ -28,7 +28,49 @@
   <br><br>
     </form>
   </div>
-<div class="container">
+
+  <div class="col-md-12">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    ></pagination-controls>
+  </div>
+<div>
+    <table class="result-table">
+
+        <thead>
+            <tr>
+                <th class="pl-15">Dim ID</th>
+                <th>Group ID</th>
+                <th>Rep ID</th>
+         
+                <!-- <th>Report View</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ReportConfig of reportConfigs | paginate : {
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: count
+            };
+                      let i = index" 
+                      [class.active]="i == currentIndex" 
+                      (click)="setActiveReportConfig(ReportConfig, i)">
+
+                <td class="pl-15">{{ ReportConfig.dimId }}</td>
+                <td>{{ ReportConfig.configGroupId }}</td>
+                <td>{{ ReportConfig.dimValue }}</td>
+ 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- <div class="container">
   <table>
     <ul>
         <li 
@@ -116,4 +158,4 @@
         </li>
     </ul>
 </table>
-</div>
+</div> -->

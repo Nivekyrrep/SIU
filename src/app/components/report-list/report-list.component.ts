@@ -11,7 +11,7 @@ import { ReportListService } from 'src/app/services/report-list.service';
 
 export class ReportListComponent implements OnInit {
 
-  reports: Report[]= [];
+  reports: Report[] = [];
   currentReport: Report = {};
   currentIndex = -1;
   report = '';
@@ -73,13 +73,8 @@ export class ReportListComponent implements OnInit {
   }
 
   searchReport(): void {
-
     this.page = 1;
-
     this.retrieveReports();
-
   }
-
-
 
 }
