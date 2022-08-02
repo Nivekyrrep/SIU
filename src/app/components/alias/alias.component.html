@@ -7,7 +7,7 @@
                         <tbody>
                             <tr>
                                 <td class="screenhead" width="94%">
-                                    Report Alias Search
+                                   <h1> Report Alias Search</h1>
                                 </td>
                                 <td class="screenhead">
 
@@ -88,12 +88,50 @@
                         <tbody>
                             <tr>
                                 <td class="tablecaption">
-                                    Results:
+                                  <h1>  Results:</h1>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </td>
+
+                    <table>
+   
+                        <!-- <div class="col-md-12">
+                            <pagination-controls
+                              previousLabel="Prev"
+                              nextLabel="Next"
+                              [responsive]="true"
+                              (pageChange)="handlePageChange($event)"
+                            ></pagination-controls>
+                          </div> -->
+                        <div>
+                            <table class="result-table">
+                    
+                                <thead>
+                                    <tr>
+                                        <th class="pl-15">Alias</th>
+                                        <th>Alias ID</th>
+                                        <th>Report ID</th>
+                                        
+                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor=
+                                    "let Alias of aliases ;
+                                    let i = index"
+                                    [class.active]="i == currentIndex"
+                                    (click)="setActiveAlias(Alias, i)">
+                    
+                                        <td class="pl-15">{{ Alias.alias }}</td>
+                                        <td>{{ Alias.aliasid }}</td>
+                                        <td>{{ Alias.reportid }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                <!-- </td>
             </tr>
             <tr>
                 <td>
@@ -101,7 +139,7 @@
                         <tbody>
                             <tr class="listtitlewidth_400">
                                 <td width="20">
-                                    <!-- <img class="check" src="/assets/checkmark.png"> -->
+                                    <img class="check" src="/assets/checkmark.png">
                                 </td>
                                 <td class="tablewidth_240">
                                     Report Name
@@ -132,10 +170,9 @@
                             <div>
                                 <label><strong>Report Id:</strong></label>
                                 {{ Alias.reportid }}
-                            </div>
+                            </div> -->
 
-                            </li>
-                        </ul>
+                           
                     </table>
 
 
