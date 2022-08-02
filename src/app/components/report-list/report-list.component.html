@@ -1,243 +1,149 @@
 <form name="adminReportSearchForm" method="post" action="/webrptportal/adminRepSearchLoad.rtf">
-    <table cellspacing="0" cellpadding="0" border="0"> 
-    <tbody><tr>
-        <td>
-            <table class="tablewidth_850" cellspacing="0" cellpadding="0">
-                <tbody><tr>
-                    <h1>
-                        Report Search
-                    </h1>
-                   
-                </tr>
-            </tbody></table> 
-                    
-            <table  cellspacing="0" cellpadding="0" class="tablewidth_850" align="right">	
-                <tbody><tr>
-                    <td class="tablecaption">
-                        
-                    </td>
-                    <td class="tablecaption"></td>
-                    <td class="tablecaption" > 
-                      
-                        <button class="btn btn-success" routerLink="/addReport" routerLinkActive="active">
-                            Add Report
-                        </button>
-                        </td>
-                </tr>
-            </tbody></table>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <table class="tablewidth_850">
-                <tbody><tr>
-                    <td width="85">
-                        <span class="label">Report Name:</span>
-                    </td>
-                    <td>
-                        <input type="text" name="reportName" maxlength="9" value="" onkeypress="pressEnterKey(document.adminReportSearchForm,'reportSearch');" onblur="colorreset(this);" onfocus="changecolour(this);" class="field"> 
-                    </td>
-                </tr>
+    <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <h1>
+                                    Report Search
+                                </h1>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" class="tablewidth_850" align="right">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+
+                                </td>
+                                <td class="tablecaption"></td>
+                                <td class="tablecaption">
+
+
+                                    <button class="btn btn-success" routerLink="/splash" routerLinkActive="active">
+                                        X
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td width="85">
+                                    <span class="label">Report Name:</span>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    class="form-control" 
+                                    name="ReportName" 
+                                    placeholder="Search by Report"
+                                    maxlength="9" 
+                                    [(ngModel)]="currentReport.reportName">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="85">
+                                    <span class="label">Title Name:</span>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    name="title" 
+                                    value=""
+                                    placeholder="Search by Title">
+                                </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-success" routerLink="/addReport" routerLinkActive="active">
+                                        Add Report
+                                    </button>
+                                </td>
+
+                                <td>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" 
+                                            type="button"
+                                            (click)="searchReport()">
+                                            Search Reports
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <br><br>
+            <tr>
+                <td>
+                    <table class="tablewidth_850">
+                        <tbody>
+                            <tr>
+                                <td class="tablecaption">
+                                    <h1>Results:</h1>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+    </table>
+
+    <div class="col-md-12">
+        <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          [responsive]="true"
+          (pageChange)="handlePageChange($event)"
+        ></pagination-controls>
+      </div>
+    <div class="result-table">
+        <table>
+
+            <thead>
                 <tr>
-                    <td width="85">
-                        <span class="label">Title Name:</span>
-                    </td>
-                    <td>
-                        <input type="text" name="title" value="" onkeypress="pressEnterKey(document.adminReportSearchForm,'reportSearch');" onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
-                    </td>
+                    <th class="pl-15">Report Name</th>
+                    <th>AS400</th>
+                    <th>Status</th>
+                    <th>Spool Report</th>
+                    <th>Skip Pages</th>
+                    <th>Creation Date</th>
+                    <!-- <th>Report View</th> -->
                 </tr>
-                <br>
-                <tr>
-                    <td> <button class="btn btn-success"onclick="fnValidateSearch(document.adminReportSearchForm,'reportSearch');"  accesskey="S">
-                        Search
-                    </button></td>
-                    <td>
-                    </td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Report of reports | paginate : {
+                    itemsPerPage: pageSize,
+                    currentPage: page,
+                    totalItems: count
+                };
+                          let i = index" 
+                          [class.active]="i == currentIndex" 
+                          (click)="setActiveReport(Report, i)">
+
+                    <td class="pl-15">{{ Report.reportName }}</td>
+                    <td>{{ Report.as400Id }}</td>
+                    <td>{{ Report.status }}</td>
+                    <td>{{ Report.nonSpoolFile }}</td>
+                    <td>{{ Report.skipPages }}</td>
+                    <td>{{ Report.creationDate }}</td>
                 </tr>
             </tbody>
         </table>
-        </td>
-    </tr>
-    <br><br>
-    <tr>
-        <td>
-            <table class="tablewidth_850">
-            <tbody><tr>
-                <td class="tablecaption">
-                    Results:
-                </td>
-            </tr>
-            </tbody></table>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <table class="tablewidth_850" height="23px" cellspacing="0" border="0"> 
-                <tbody><tr class="listtitlewidth_400">
-                    <td>
-                        <!-- <img src="/webrptportal/images/checkmark.gif"> -->
-                    </td> 
-                    
-                        <td class="tablewidth_200">
-                            Report Name
-                        </td>	
-                        
-                        
-                    <td class="tablewidth_75">
-                        AS400
-                    </td>
-                    <td class="tablewidth_50">
-                        Status
-                    </td>
-                    <td class="tablewidth_120">
-                        Spool Report?
-                    </td>
-                    <td class="tablewidth_100">
-                        Skip Pages
-                    </td>
-                    <td class="tablewidth_165">
-                        Creation Date
-                    </td>
-                    <td class="tablewidth_140">
-                        Report Definition
-                    </td>
-                </tr>
-            
-            </tbody></table>
-            
-                <table class="tablewidth_850" cellspacing="0">
-                    <tbody><tr>
-                    <td>
-                        
-                    </td>
-                    </tr>
-                </tbody></table>
-            
-        </td>	
-    </tr>
-    </tbody></table>
+    </div>
 
-    <table>
-        <ul>
-            <li 
-            class="list-group-item" 
-            *ngFor=
-            "let Report of reports ;
-            let i = index"
-            [class.active]="i == currentIndex"
-            (click)="setActiveReport(Report, i)">
-            <div class="report table">
-                <label><strong>ID:</strong></label> {{ Report.REPORTID }}
-            </div>
-            <div>
-                <label><strong>Name:</strong></label>
-                {{ Report.reportName }}
-            </div>
-            <div>
-                <label><strong>max days:</strong></label>
-                {{ Report.histortOfMaxDays }}
-            </div>
-            <div>
-                <label><strong>Nonspool:</strong></label>
-                {{ Report.nonSpoolFile }}
-            </div>
-            <div>
-                <label><strong>Description:</strong></label>
-                {{ Report.description }}
-            </div>
-            <div>
-                <label><strong> Title:</strong></label>
-                {{ Report.title }}
-            </div>
-            <div>
-                <label><strong>Abstract:</strong></label>
-                {{ Report.Abstract }}
-            </div>
-            <div>
-                <label><strong>exp:</strong></label>
-                {{ Report.expirationDays }}
-            </div>
-            <div>
-                <label><strong>skip:</strong></label>
-                {{ Report.skipPages }}
-            </div>
-            <div>
-                <label><strong>uploadedFileName:</strong></label>
-                {{ Report.uploadedFileName }}
-            </div>
-            <div>
-                <label><strong>creationDate:</strong></label>
-                {{ Report.creationDate }}
-            </div>
-            <div>
-                <label><strong>allowPrnt:</strong></label>
-                {{ Report.allowPrnt }}
-            </div>
-            <div>
-                <label><strong>addedBy:</strong></label>
-                {{ Report.addedBy }}
-            </div>
-            <div>
-                <label><strong>modifiedBy:</strong></label>
-                {{ Report.modifiedBy }}
-            </div>
-            <div>
-                <label><strong>as400Id:</strong></label>
-                {{ Report.as400Id }}
-            </div>
-            <div>
-                <label><strong>status:</strong></label>
-                {{ Report.status }}
-            </div>
-            <div>
-                <label><strong>deletedBy:</strong></label>
-                {{ Report.deletedBy }}
-            </div>
-            <div>
-                <label><strong>multiReports:</strong></label>
-                {{ Report.multiReports }}
-            </div>
-            <div>
-                <label><strong>fileName:</strong></label>
-                {{ Report.fileName }}
-            </div>
-            <div>
-                <label><strong>allowOverrides:</strong></label>
-                {{ Report.allowOverrides }}
-            </div>
-            <div>
-                <label><strong>numColumns:</strong></label>
-                {{ Report.numColumns }}
-            </div>
-            <div>
-                <label><strong>confidential:</strong></label>
-                {{ Report.confidential }}
-            </div>
-            <div>
-                <label><strong>bireport:</strong></label>
-                {{ Report.bireport }}
-            </div>
-            <div>
-                <label><strong>helpUrl:</strong></label>
-                {{ Report.helpUrl }}
-            </div>
-            <div>
-                <label><strong>help:</strong></label>
-                {{ Report.help }}
-            </div>
-            <div>
-                <label><strong>detailDescription:</strong></label>
-                {{ Report.detailDescription }}
-            </div>
-            <div>
-                <label><strong>combinePdfReport:</strong></label>
-                {{ Report.combinePdfReport }}
-            </div>
-            </li>
-        </ul>
-    </table>
 
 
     <input type="hidden" name="Option">
-    
-    </form>
+
+</form>

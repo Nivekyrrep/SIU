@@ -28,3 +28,58 @@
     will-change: box-shadow,transform;
     font-size: 18px;
   }
+
+  /* .result-table {
+    font: normal 14px sans-serif;
+    margin: 15px auto 0 auto;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 400px;
+    max-width: 800px;
+    
+  }
+    p.result-table {
+      background-color: #313b3f;
+      color: #fcdb42;
+      padding: 10px;
+      margin: 0;
+    }
+  
+    table.result-table {
+      margin-top: 15px;
+      width: 100%;
+      border-collapse: collapse;
+  
+    }
+        tr.result-table{  
+          padding-left: 10px;
+        
+      }
+  
+      td.result-table {
+        width: 33.3%;
+        font-size: 13px;
+      }
+  
+      thead.result-table {
+        font-size: 14px;
+      }
+
+      th.result-table{
+          border-bottom: 1px solid black;
+          text-align: left;
+          padding-bottom: 5px;
+        }
+      
+  
+      .pl-15 {
+        padding-left: 15px;
+      }
+  
+      tbody.result-table {
+   
+          padding: 5px 0;
+          border-bottom: 1px solid lightgrey;
+        }
+      
+       */

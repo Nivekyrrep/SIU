@@ -12,8 +12,8 @@ export class ReportListService {
   
   constructor(private http: HttpClient) { }
     
-  getAll(): Observable<any> {
-    return this.http.get<any>(baseUrl);
+  getAll(params: any): Observable<any> {
+    return this.http.get<any>(baseUrl, { params });
   }
 
 
@@ -22,15 +22,15 @@ export class ReportListService {
 
 
 
-  get(report: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${report}`);
+  get(reportId: any): Observable<Report> {
+    return this.http.get(`${baseUrl}/${reportId}`);
   }
   
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
   
-  update(id: any, data: any): Observable<any> {
+  update(id: any, data: any): Observable<Report> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
   
@@ -38,8 +38,8 @@ export class ReportListService {
   //   return this.http.delete(`${baseUrl}/${id}`);
   // }
 
-  findByTitle(title: any): Observable<Report[]> {
-    return this.http.get<Report[]>(`${baseUrl}?title=${title}`);
+  findByTitle(report: any): Observable<Report[]> {
+    return this.http.get<Report[]>(`${baseUrl}?report=${report}`);
   }
 
 

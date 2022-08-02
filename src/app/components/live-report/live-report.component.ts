@@ -15,6 +15,7 @@ export class LiveReportComponent implements OnInit {
   // count = 0;
   // pageSize = 3;
   // pageSizes = [3, 6, 9];
+  
   constructor(private LiveReportService: LiveReportService) { }
   ngOnInit(): void {
     this.retrieveLiveReports();

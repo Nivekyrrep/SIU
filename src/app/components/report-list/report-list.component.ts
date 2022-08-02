@@ -10,13 +10,13 @@ import { ReportListService } from 'src/app/services/report-list.service';
 })
 export class ReportListComponent implements OnInit {
 
-  reports?: Report[];
+  reports: Report[]= [];
   currentReport: Report = {};
   currentIndex = -1;
-  
+  report = '';
   page = 1;
   count = 0;
-  pageSize = 3;
+  pageSize = 10;
   pageSizes = [3, 6, 9];
 
 
@@ -27,38 +27,60 @@ export class ReportListComponent implements OnInit {
     this.retrieveReports();
   }
 
-  retrieveReports(): void {
-
-    this.ReportListService.getAll().subscribe(data => {
-      const {totalItems} = data;
-      this.reports = data;
-      // this.count = totalItems;
-      console.log(data);
-    },
-      error => {
-        console.log(error);
-      });
+  getRequestParams(searchReport: string, page: number, pageSize: number): any {
+    let params: any = {};
+    if (searchReport) {
+      params[`report`] = searchReport;
     }
-      setActiveReport(report: Report, index: number): void {
-        this.currentReport = report;
-        this.currentIndex = index;
+    if (page) {
+      params[`page`] = page - 1;
+    }
+    if (pageSize) {
+      params[`size`] = pageSize;
+    }
+    return params;
   }
- 
+
+
+  retrieveReports(): void {
+    const params = this.getRequestParams(this.report, this.page, this.pageSize);
+    this.ReportListService.getAll(params)
+      .subscribe(data => {
+        const { reports, totalItems } = data;
+        this.reports = reports;
+        this.count = totalItems;
+        // this.count = totalItems;
+        console.log(data);
+      },
+        error => {
+          console.log(error);
+        });
+  }
+
+  setActiveReport(report: Report, index: number): void {
+    this.currentReport = report;
+    this.currentIndex = index;
+  }
+
   refreshList(): void {
     this.retrieveReports();
     this.currentReport = {};
     this.currentIndex = -1;
   }
 
-  // ---------------------------
-  // ---------------------------
+  handlePageChange(event: number): void {
+    this.page = event;
+    this.retrieveReports();
+  }
+
+  searchReport(): void {
+
+    this.page = 1;
+
+    this.retrieveReports();
+
+  }
 
 
-  // getRequestParams(): any {
-  //   let params: any = {};
 
-  //   return params;
-  // }
 }
-
-

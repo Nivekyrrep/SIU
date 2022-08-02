@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'splash', component: SplashComponent},
   {path: 'report-list', component: ReportListComponent},
+  {path: 'report-list/:id', component: ReportListComponent},
   {path: 'addReport', component: CreateReportComponent},
   {path: 'config', component: ConfigComponent},
   {path: 'alias', component: AliasComponent},

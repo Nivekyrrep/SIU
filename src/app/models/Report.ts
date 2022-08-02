@@ -1,5 +1,5 @@
 export class Report {
-    REPORTID?: number;
+    reportID?: number;
     reportName?: string;
     histortOfMaxDays?: number;
     nonSpoolFile?: number;
